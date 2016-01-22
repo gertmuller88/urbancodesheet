@@ -1,0 +1,40 @@
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	
+	<appender name="fileOK" class="com.pitang.util.log.RolledFileAppender">
+		<param name="File" value="logs/ok-tasks.csv" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss}%m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="fileTODO" class="com.pitang.util.log.RolledFileAppender">
+		<param name="File" value="logs/todo-tasks.csv" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss}%m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="fileNOK" class="com.pitang.util.log.RolledFileAppender">
+		<param name="File" value="logs/nok-tasks.csv" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss}%m%n" />
+		</layout>
+	</appender>
+	
+	<logger name="FILE_OK">
+		<level value="all" />
+		<appender-ref ref="fileOK" />
+	</logger>
+	
+	<logger name="FILE_TODO">
+		<level value="all" />
+		<appender-ref ref="fileTODO" />
+	</logger>
+	
+	<logger name="FILE_NOK">
+		<level value="all" />
+		<appender-ref ref="fileNOK" />
+	</logger>
+	
+</log4j:configuration>
